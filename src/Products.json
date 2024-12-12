@@ -1,0 +1,43 @@
+[
+    {
+      "imageUrl": "https://ibb.co.com/kqFTppY",
+      "title": "Forerunner 290XT",
+      "rating": "5 stars",
+      "reviews": 2,
+      "price": "$70",
+      "description": "This is a high-quality, durable watch suitable for all your adventurous needs.",
+      "type": "watch",
+      "modelNumber": "forerunner-290xt"
+    },
+    {
+      "imageUrl": "https://ibb.co.com/hVmdLGm",
+      "title": "Garmin Fenix 6 Pro",
+      "rating": "5 stars",
+      "reviews": 2,
+      "price": "$70",
+      "description": "A premium watch with advanced features for outdoor adventures and sports.",
+      "type": "watch",
+      "modelNumber": "fenix-6-pro"
+    },
+    {
+      "imageUrl": "https://ibb.co.com/VwYxv5z",
+      "title": "Apple Watch Series 6",
+      "rating": "5 stars",
+      "reviews": 2,
+      "price": "$70",
+      "description": "A stylish and high-tech watch with numerous health and fitness tracking features.",
+      "type": "watch",
+      "modelNumber": "apple-watch-series-6"
+    },
+    {
+      "imageUrl": "https://ibb.co.com/99yKLyP",
+      "title": "Samsung Galaxy Watch 4",
+      "rating": "5 stars",
+      "reviews": 2,
+      "price": "$70",
+      "description": "A sleek, modern watch with comprehensive health monitoring capabilities.",
+      "type": "watch",
+      "modelNumber": "galaxy-watch-4"
+    }
+  ]
+  
