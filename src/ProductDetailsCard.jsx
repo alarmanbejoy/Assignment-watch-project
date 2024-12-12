@@ -1,4 +1,3 @@
-// src/ProductDetailsCard.jsx
 import React, { useState } from 'react';
 import products from './products.json';
 
@@ -7,14 +6,18 @@ const ProductDetailsCard = () => {
   const [selectedProduct, setSelectedProduct] = useState(products[0]);
   const [selectedSize, setSelectedSize] = useState('');
   const [quantity, setQuantity] = useState(0);
+  const [price, setPrice] = useState(selectedProduct.price); // State for the main price
 
   const handleColorChange = (color, index) => {
     setSelectedColor(color);
     setSelectedProduct(products[index]);
+    setPrice(products[index].price); // Reset price for new product
+    setSelectedSize(''); // Reset selected size for new product
   };
 
-  const handleSizeChange = (size) => {
+  const handleSizeChange = (size, price) => {
     setSelectedSize(size);
+    setPrice(price); // Set price directly to the selected size price
   };
 
   const handleQuantityChange = (value) => {
@@ -43,7 +46,7 @@ const ProductDetailsCard = () => {
           </div>
           <div className="flex items-center my-2">
             <span className="line-through text-gray-500 mr-2">{selectedProduct.oldPrice}</span>
-            <span className="text-red-500">{selectedProduct.price}</span>
+            <span className="text-red-500">{price}</span> {/* Display updated price */}
           </div>
           <p className="my-2">{selectedProduct.description}</p>
           <div className="flex items-center my-2 text-gray-500">
@@ -72,18 +75,22 @@ const ProductDetailsCard = () => {
           <div className="my-4">
             <h3 className="font-bold">Wrist Size:</h3>
             <div className="flex items-center my-2">
-              <button className="border p-2 mr-2 text-sm text-gray-700 rounded-md font-semibold">
-                S <span className="font-normal text-gray-500">$70</span>
-              </button>
-              <button className="border p-2 mr-2 text-sm text-gray-700 rounded-md font-semibold">
-                M <span className="font-normal text-gray-500">$77</span>
-              </button>
-              <button className="border p-2 mr-2 text-sm text-gray-700 rounded-md font-semibold">
-                L <span className="font-normal text-gray-500">$89</span>
-              </button>
-              <button className="border p-2 mr-2 text-sm text-gray-700 rounded-md font-semibold">
-                XL <span className="font-normal text-gray-500">$99</span>
-              </button>
+              {[
+                { size: 'S', price: 70 },
+                { size: 'M', price: 77 },
+                { size: 'L', price: 89 },
+                { size: 'XL', price: 99 },
+              ].map(({ size, price: sizePrice }) => (
+                <button
+                  key={size}
+                  className={`border p-2 mr-2 text-sm rounded-md font-semibold ${
+                    selectedSize === size ? 'border-gray-700 text-blue-700' : 'border-blue-500 text-gray-700'
+                  }`}
+                  onClick={() => handleSizeChange(size, sizePrice)}
+                >
+                  {size} <span className="font-normal text-gray-500">${sizePrice}</span>
+                </button>
+              ))}
             </div>
           </div>
           <div className="my-4 flex items-center">
