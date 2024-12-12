@@ -1,19 +1,12 @@
+import React from 'react';
+import ProductDetailsCard from './ProductDetailsCard';
 
-
-
-
-function App() {
-
-
+const App = () => {
   return (
-    <h1 className="">
-    Hello world!
-  </h1>
+    <div className="App">
+      <ProductDetailsCard />
+    </div>
+  );
+};
 
-   
-
-  
-  )
-}
-
-export default App
+export default App;
